@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :tickets
+  resources :registrations
+  resources :tournaments
+  resources :games
+  resources :players
+  resources :teams
   resources :users
   post "signup",to: "users#create"
   post "login", to:"sessions#create"
