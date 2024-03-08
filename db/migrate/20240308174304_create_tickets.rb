@@ -4,7 +4,6 @@ class CreateTickets < ActiveRecord::Migration[7.0]
       t.string :ticket_type
       t.string :price
       t.string :availability
-
       t.timestamps
       t.references :tournament, null: false, foreign_key: true
     end
