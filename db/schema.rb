@@ -34,10 +34,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_08_174304) do
     t.string "registration_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "player_id", null: false
+    t.integer "user_id", null: false
     t.integer "tournament_id", null: false
-    t.index ["player_id"], name: "index_registrations_on_player_id"
     t.index ["tournament_id"], name: "index_registrations_on_tournament_id"
+    t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -79,8 +79,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_08_174304) do
   end
 
   add_foreign_key "players", "teams"
-  add_foreign_key "registrations", "players"
   add_foreign_key "registrations", "tournaments"
+  add_foreign_key "registrations", "users"
   add_foreign_key "tickets", "tournaments"
   add_foreign_key "tournaments", "games"
 end

@@ -33,7 +33,7 @@ class RegistrationsController < ApplicationController
     private
   
     def registration_params
-      params.require(:registration).permit(:registration_date, :registration_status, :player_id, :tournament_id)
+      params.require(:registration).permit(:registration_date, :registration_status, :user_id, :tournament_id)
     end
   end
   
